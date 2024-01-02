@@ -1,0 +1,44 @@
+
+<!-- my_work.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+    {% load static %}
+
+    <h1>My Work</h1>
+
+    <div class="grid">
+        {% for image in images %}
+            <div class="grid-item">
+                <a href="{% static 'portfolio/images/' %}{{ image.filename }}" data-fancybox="gallery" data-caption="{{ image.caption }}">
+                    <img src="{% static 'portfolio/images/thumbnails/' %}{{ image.thumbnail_filename }}" alt="{{ image.caption }}">
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+
+    <!-- Debugging information -->
+    <!-- <ul>
+        {% for image in images %}
+            <li>{{ image.filename }} - {{ image.thumbnail_filename }}</li>
+        {% endfor %}
+    </ul> -->
+    
+
+    <script src="{% static 'masonry/masonry.pkgd.min.js' %}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var grid = document.querySelector('.grid');
+
+            imagesLoaded(grid, function () {
+                var masonry = new Masonry(grid, {
+                    itemSelector: '.grid-item',
+                    columnWidth: '.grid-item',
+                    gutter: 20, // Adjust the gutter as needed
+                });
+            });
+        });
+    </script>
+{% endblock %}
+
+

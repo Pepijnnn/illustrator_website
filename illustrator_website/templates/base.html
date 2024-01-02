@@ -1,0 +1,141 @@
+<!-- base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Include Fancybox CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+    <!-- Include jQuery (required for Fancybox) -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <!-- Include Fancybox JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js"></script>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            min-height: 100vh; /* Ensure the body takes at least the full height of the viewport */
+            display: flex;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1; /* Allow main content to grow and fill remaining space */
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #f0f0f0; /* Background color of the menu */
+            padding: 10px 0; /* Add padding for spacing */
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            margin: 0 15px;
+            position: relative;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333; /* Text color of the menu items */
+            font-weight: bold;
+            padding: 10px 15px;
+            display: block;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ff5733; /* Change color on hover */
+        }
+
+        /* Add more styles as needed */
+
+        /* Center content in the page */
+        main {
+            text-align: center;
+            margin-top: 20px; /* Adjust as needed */
+        }
+
+       
+
+
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 auto;
+            justify-content: flex-start; /* This aligns the gallery to the left */
+            @media (min-width: 768px) {
+                padding-left: 10px; /* Adjust the padding as needed */
+            }
+        }
+
+        .grid-item {
+            box-sizing: border-box;
+            margin: 10px;
+        }
+
+        .grid-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+        }
+
+        @media (min-width: 768px) {
+            .grid-item {
+                width: calc(33.33% - 40px);
+            }
+        }
+
+        @media (max-width: 767px) {
+            .grid-item {
+                width: calc(100% - 20px);
+            }
+        }
+        /* Style for the footer */
+        footer {
+            background-color: #d0d0d0; /* Different color for the footer */
+            padding: 20px; /* Adjust padding as needed */
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0; /* Remove default margin for better centering */
+        }
+
+
+    </style>
+    <title>{% block title %}Illustrator Website{% endblock %}</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{% url 'my_work' %}">My Work</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+            <li><a href="{% url 'about_me' %}">About Me</a></li>
+            <li><a href="{% url 'shop' %}">Shop</a></li>
+        </ul>
+    </nav>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; {% now "Y" %} Your Website | Behance: YourBehanceUsername | Active Since: YYYY</p>
+    </footer>
+</body>
+</html>
