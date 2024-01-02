@@ -1,4 +1,4 @@
-asgiref @ file:///tmp/build/80754af9/asgiref_1625643473416/work
+
 certifi @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_884c889c-96af-444f-bd6d-daddb5e9a462ykj3l5n_/croots/recipe/certifi_1655968814730/work/certifi
 Django @ file:///tmp/build/80754af9/django_1625585912945/work
 psycopg2 @ file:///Users/ktietz/ci_310/psycopg2_1643967254545/work
