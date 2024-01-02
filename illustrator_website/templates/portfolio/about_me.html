@@ -1,7 +1,25 @@
-<!-- about_me.html -->
 {% extends 'base.html' %}
-
 {% block content %}
-    <h1>My Work</h1>
-    <!-- Add content specific to "My Work" page -->
+{% load static %} 
+    <!-- <h1>About me</h1> -->
+    <div class="about-wrapper">
+        <div class="about-container">
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        Paula Sibbes Gomez Bernal, a 34-year-old Scientific Illustrator and Graphic Designer, brings her creative expertise to life in the picturesque city of Nijmegen, the Netherlands, where she has called home for the past five years. Originally hailing from Colombia, Paula's artistic journey is deeply rooted in her passion for visual storytelling, scientific exploration, and cultural diversity. Through her unique blend of scientific precision and artistic flair, Paula captivates audiences with visually stunning creations that bridge the realms of science and art. With an unwavering commitment to excellence, Paula continues to inspire and engage through her vibrant and thought-provoking work.
+                    </p>
+                </div>
+            </div>
+            <div class="about-photo">
+                <img src="{% static 'portfolio/about_me/profile2.jpeg' %}" alt="Your Photo" />
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-icons">
+        <a href="https://www.instagram.com/" target="_blank" class="icon instagram"></a>
+        <a href="mailto:your@email.com" target="_blank" class="icon email"></a>
+        <a href="https://wa.me/1234567890" target="_blank" class="icon whatsapp"></a>
+    </div>
 {% endblock %}
