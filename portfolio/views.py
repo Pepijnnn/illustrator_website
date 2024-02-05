@@ -21,7 +21,7 @@ def my_work(request):
     images_directory = os.path.join(settings.BASE_DIR, 'static', 'portfolio', 'images')
 
     # Get a list of all files in the images directory
-    image_files = [f for f in os.listdir(images_directory) if os.path.isfile(os.path.join(images_directory, f))][1:]
+    image_files = [f for f in os.listdir(images_directory) if os.path.isfile(os.path.join(images_directory, f))]
 
     # Define a dictionary with custom captions for each image
     captions = {
@@ -42,8 +42,8 @@ def my_work(request):
 
     # Create a list of dictionaries with image information
     images = [
-        {'filename': file, 'thumbnail_filename': file, 'caption': captions.get(file, f'Caption for {file}')}
-        for file in image_files
+        {'filename': file, 'thumbnail_filename': file, 'caption': captions.get(file)}
+        for file in image_files # , f'Caption for {file}'
     ]
 
     return render(request, 'portfolio/my_work.html', {'images': images})
