@@ -139,7 +139,7 @@
 
          .about-wrapper {
             background-color: #15364c; /* #02cfef; Light blue background color */
-            width: 70%;
+            width: 100%;
             margin: 0 auto; 
             display: flex;
             flex-direction: column;
@@ -150,7 +150,7 @@
         }
 
         .about-container {
-            max-width: 90%;
+            max-width: 70%;
             
             /*max-width: 70%; /* Set the combined max-width for the text and image container */
             margin: 0 auto; /* Center the container horizontally */
@@ -175,13 +175,24 @@
         .about-content {
             flex-basis: 40%; /* Set the initial width of the text container */
             padding-right: 50px; /* Adjust the left padding for space between text and image */
-            padding-top: 7%;
-            line-height: 1.6; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: justify;/* Justify the text for a clean appearance*/
+            line-height: 1.6;
             color: rgb(255, 255, 255); 
         }
 
-        .about-text p {
-            text-align: justify; /* Justify the text for a clean appearance */
+        .about-text {
+            text-align: justify;/* Justify the text for a clean appearance*/
+            line-height: 1.6;
+            color: rgb(255, 255, 255); 
+            /* display: flex; */
+            /* justify-content: center; */
+            /* align-items: center; */
+            /* height: 200px; */
+            /* border: 3px solid green; */
         }
 
         /* Media query for mobile */
